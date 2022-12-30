@@ -8,22 +8,20 @@ export default function Welcome() {
 
   const { navigate } = useNavigation()
 
-  const navigateTo = (screen) => navigate(screen)
-
   return (
     <View>
       <Text style={styles.title}>Welcome</Text>
 
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigateTo('Create')}
+        onPress={() => navigate('Create')}
       >
         <Text>Create New Customer</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigateTo('Regions')}
+        onPress={() => navigate('Regions')}
       >
         <Text>Go to Regions</Text>
       </TouchableOpacity>

@@ -1,13 +1,13 @@
 import { View, Text } from 'react-native'
-import { useUpdateFields, useNewCustomer } from '../../hooks'
-import Form from '../Form'
+import { useUpdateFields, useEditCustomer } from '../hooks'
+import Form from '../components/Form'
 import stylesFn from './styles'
 
-export default function Create() {
+export default function Edit() {
   const styles = stylesFn()
 
   const { fields, setFormField } = useUpdateFields()
-  const { onSubmit } = useNewCustomer()
+  const { onSubmit } = useEditCustomer()
 
   const {
     first_name,
@@ -16,9 +16,11 @@ export default function Create() {
     contact
   } = fields
 
+  console.log('fields', fields)
+
   return (
     <View>
-      <Text>Create a new customer</Text>
+      <Text>Edit the customer data</Text>
       <Form 
         firstName={first_name}
         lastName={last_name}

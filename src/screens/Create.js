@@ -1,5 +1,5 @@
 import { SafeAreaView, ScrollView } from 'react-native'
-import View from '../features/customers/components/Create'
+import View from '../features/Create'
 
 export default function Create() {
   return (

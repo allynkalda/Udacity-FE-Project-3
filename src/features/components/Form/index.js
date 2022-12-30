@@ -1,5 +1,5 @@
 import { View, Text, TextInput, Picker, TouchableOpacity } from 'react-native'
-import { REGIONS } from '../../../constants/regions'
+import { REGIONS } from '../../constants/regions'
 import stylesFn from './styles'
 
 export default function Form({

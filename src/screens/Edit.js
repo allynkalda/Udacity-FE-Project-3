@@ -1,5 +1,5 @@
 import { SafeAreaView, ScrollView } from 'react-native'
-import View from '../features/customers/components/Edit'
+import View from '../features/Edit'
 
 export default function Edit() {
   return (

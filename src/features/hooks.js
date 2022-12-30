@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import * as actions from './reducers'
 
@@ -26,6 +27,13 @@ export const useNewCustomer = () => {
 }
 
 export const useListCustomers = () => {
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(actions.loadCustomers())
+  }, [dispatch])
+  
   return useSelector(state => state.customer.list.customers)
 }
 
@@ -59,6 +67,9 @@ export const useEditCustomer = () => {
   const dispatch = useDispatch()
 
   return {
+      fillEditForm: (customerId) => {
+        dispatch(actions.setForm(customerId))
+      },
       onSubmit: () => {
         console.log('Dispatching EDIT_CUSTOMER action')
         dispatch(actions.editCustomer())

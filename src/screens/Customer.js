@@ -1,5 +1,5 @@
 import { SafeAreaView, ScrollView } from 'react-native'
-import View from '../features/customers/components/Customer'
+import View from '../features/Customer'
 
 export default function Customer() {
   return (

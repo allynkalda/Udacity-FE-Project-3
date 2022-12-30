@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { PENDING, INPROGRESS, REQUESTING, SUCCESS, ERROR } from '../../utilities/helpers'
+import { PENDING, INPROGRESS, REQUESTING, SUCCESS, ERROR } from '../utilities/helpers'
 
 const name = 'customer'
 
@@ -26,13 +26,7 @@ const initialState = {
         message: ''
     },
     selectedRegion: '',
-    selectedCustomer: {
-        first_name: '',
-        last_name: '',
-        region: '',
-        contact: '',
-        id: ''
-    }
+    selectedCustomer: ''
 }
 
 const reducers = {
@@ -50,11 +44,11 @@ const reducers = {
         state.error.message = payload
         state.form.fields = initialState.form.fields
     },
-    editCustomer: (state, { payload }) => {
+    editCustomer: (state) => {
         state.edit.status = REQUESTING
     },
     setForm: (state, { payload }) => {
-        const customer = state.list.customers.find(a => a.id = payload)
+        const customer = state.list.customers.find(a => a.id == payload)
 
         if (customer) {
             state.form.fields = customer
@@ -95,6 +89,12 @@ const reducers = {
         state.selectedCustomer = payload
         state.form.fields = payload
     },
+    loadCustomers: (state) => {
+        state.status = REQUESTING
+    },
+    loadCustomersResult: (state, { payload }) => {
+        state.list.animals = payload
+    },
 }
 
 const slice = createSlice({
@@ -114,7 +114,9 @@ export const {
     editCustomerStatus,
     setFormField,
     setSelectedRegion,
-    setSelectedCustomer
+    setSelectedCustomer,
+    loadCustomers,
+    loadCustomersResult
 } = slice.actions
 
 export default slice.reducer

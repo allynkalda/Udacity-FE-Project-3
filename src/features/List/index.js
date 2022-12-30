@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
-import { useListCustomers, useRegion, useSelectedCustomer } from '../../hooks'
+
+import { useListCustomers, useRegion, useSelectedCustomer } from '../hooks'
 import { useNavigation } from '@react-navigation/native'
 
 import stylesFn from './styles'
@@ -21,7 +22,7 @@ export default function List() {
   }, [ customers ])
 
   const onPress = (value) => {
-    setSelectedCustomer(value)
+    setSelectedCustomer(value.id)
     navigate('Customer')
   }
 
@@ -32,6 +33,13 @@ export default function List() {
     customersOfRegion.map((customer, index) => {
         return <TouchableOpacity key={index} style={styles.title} onPress={() => onPress(customer)}><Text>{customer.first_name}</Text></TouchableOpacity>
       }) : <Text style={styles.title}>No Customers!</Text>}
+
+    <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigate('Create')}
+      >
+        <Text>Create New Customer</Text>
+    </TouchableOpacity>
     </View>
   )
 }

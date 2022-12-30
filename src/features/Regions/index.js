@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import { useListCustomers, useRegion } from '../../features/customers/hooks'
+import { useListCustomers, useRegion } from '../hooks'
 import { REGIONS } from '../constants/regions'
 
 import stylesFn from './styles'
