@@ -17,8 +17,8 @@ export default function Create() {
   } = fields
 
   return (
-    <View>
-      <Text>Create a new customer</Text>
+    <View style={styles.create}>
+      <Text style={styles.createText}>Create a new customer</Text>
       <Form 
         firstName={first_name}
         lastName={last_name}

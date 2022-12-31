@@ -1,15 +1,13 @@
 import { StyleSheet } from 'react-native'
 
 const stylesFn = () => StyleSheet.create({
-  create: {
-    alignItems: 'center',
-    display: 'flex',
-    flex: 1,
-    padding: 20,
+  customerBox: {
+    border: '1px solid #63458A',
+    margin: 10,
+    padding: 32,
+    borderRadius: 4
   },
-  createText: {
-    fontSize: 16,
-    padding: 12,
+  text: {
     fontWeight: 500
   }
 });

@@ -27,15 +27,14 @@ export default function Regions() {
   }
 
   return (
-    <View>
-      <Text style={styles.title}>Regions</Text>
+    <View style={styles.region}>
       {REGIONS.map((region, index) => {
       return <TouchableOpacity
       key={index}
       style={styles.button}
       onPress={() => press(region)}
     >
-      <Text>{region}</Text>
+      <Text style={styles.buttonText}>{region}</Text>
     </TouchableOpacity>
       })}
     </View>

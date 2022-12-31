@@ -13,41 +13,42 @@ export default function Form({
   const styles = stylesFn()
 
   return (
-    <View>
+    <View style={styles.form}>
       <TextInput
         key={'first_name'}
         placeholder='First Name'
         value={firstName}
-        style={{ borderWidth: 1, borderColor: 'black', borderRadius: 4, padding: 15 }}
+        style={styles.textInput}
         onChangeText={v => setFormField('first_name', v)}
       />
       <TextInput
         key={'last_name'}
         placeholder='Last Name'
         value={lastName}
-        style={{ borderWidth: 1, borderColor: 'black', borderRadius: 4, padding: 15 }}
+        style={styles.textInput}
         onChangeText={v => setFormField('last_name', v)}
       />
-        <Picker
+      <Picker
         selectedValue={region}
         key={'region'}
         placeholder='Region'
-        style={{ borderWidth: 1, borderColor: 'black', borderRadius: 4, padding: 15 }}
+        style={styles.textInput}
         onValueChange={v => setFormField('region', v)}
       >
         {REGIONS.map((region) => <Picker.Item key={region} label={region} value={region} />)}
       </Picker>
       <TextInput
         key={'contact'}
-        placeholder='Contact Details'
+        placeholder='Contact'
         value={contact}
-        style={{ borderWidth: 1, borderColor: 'black', borderRadius: 4, padding: 15 }}
+        style={styles.textInput}
         onChangeText={v => setFormField('contact', v)}
       />
       <TouchableOpacity
         onPress={onSubmit}
+        style={styles.button}
       >
-        <Text>Submit</Text>
+        <Text style={styles.buttonText}>Submit</Text>
       </TouchableOpacity>
     </View>
   )

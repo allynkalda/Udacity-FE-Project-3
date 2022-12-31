@@ -19,28 +19,26 @@ export default function Welcome() {
   }, [dispatch])
   
   return (
-    <View>
-      <Text style={styles.title}>Welcome</Text>
-
+    <View style={styles.welcome}>
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigate('Create')}
       >
-        <Text>Create New Customer</Text>
+        <Text style={styles.buttonText}>Create New Customer</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigate('Regions')}
       >
-        <Text>Go to Regions</Text>
+        <Text style={styles.buttonText}>Go to Regions</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.button}
         onPress={() => deleteCustomersData()}
       >
-        <Text>Delete database</Text>
+        <Text style={styles.buttonText}>Delete database</Text>
       </TouchableOpacity>
     </View>
   )
