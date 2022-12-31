@@ -9,6 +9,7 @@ export const set = async (key, value) => {
 export const get = async (key) => {
   console.log('LOADING FROM ASYNC STORAGE ::: ', key)
   const raw = await AsyncStorage.getItem(key)
+  console.log('raw', raw)
   return JSON.parse(raw)
 }
 

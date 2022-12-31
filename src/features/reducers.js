@@ -93,7 +93,10 @@ const reducers = {
         state.status = REQUESTING
     },
     loadCustomersResult: (state, { payload }) => {
-        state.list.animals = payload
+        state.list.customers = payload
+    },
+    deleteCustomersData: (state) => {
+        state.list.customers = []
     },
 }
 
@@ -116,7 +119,8 @@ export const {
     setSelectedRegion,
     setSelectedCustomer,
     loadCustomers,
-    loadCustomersResult
+    loadCustomersResult,
+    deleteCustomersData
 } = slice.actions
 
 export default slice.reducer

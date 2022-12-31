@@ -76,3 +76,13 @@ export const useEditCustomer = () => {
       }
   }
 }
+
+export const useDeleteCustomersData = () => {
+  const dispatch = useDispatch()
+
+  return {
+    deleteCustomersData: () => {
+      dispatch(actions.deleteCustomersData())
+    }
+  }
+}
