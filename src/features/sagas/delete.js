@@ -1,6 +1,6 @@
 import { all, put, select, delay, takeLatest } from 'redux-saga/effects'
 import * as actions from '../reducers'
-import { clear } from '../../utilities/async_storage'
+import { set } from '../../utilities/async_storage'
 
 export function* watchDeleteCustomersData() {
     yield takeLatest(actions.deleteCustomersData.toString(), takeDeleteCustomersData)
