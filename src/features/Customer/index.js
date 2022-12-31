@@ -27,16 +27,19 @@ export default function Customer() {
   }
 
   return (
-    <View>
-    <Text>Customer Data</Text>
-    <Text>First Name: {customerData.first_name}</Text>
-    <Text>Last Name: {customerData.last_name}</Text>
-    <Text>Region: {customerData.region}</Text>
-    <Text>Contact: {customerData.contact}</Text>
+    <View style={styles.customer}>
+    <Text style={styles.textTitle}>Customer Data</Text>
+    <View style={styles.dataBox}>
+    <Text style={styles.text}>First Name: {customerData.first_name}</Text>
+    <Text style={styles.text}>Last Name: {customerData.last_name}</Text>
+    <Text style={styles.text}>Region: {customerData.region}</Text>
+    <Text style={styles.text}>Contact: {customerData.contact}</Text>
+    </View>
     <TouchableOpacity
         onPress={onPress}
+        style={styles.button}
       >
-        <Text>Edit</Text>
+        <Text style={styles.buttonText}>Edit</Text>
       </TouchableOpacity>
     </View>
   )

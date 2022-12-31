@@ -16,11 +16,8 @@ export default function Edit() {
     contact
   } = fields
 
-  console.log('fields', fields)
-
   return (
-    <View>
-      <Text>Edit the customer data</Text>
+    <View style={styles.edit}>
       <Form 
         firstName={first_name}
         lastName={last_name}

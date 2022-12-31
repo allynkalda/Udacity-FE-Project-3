@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native'
 
 import CustomerBox from '../components/CustomerBox'
 import { useListCustomers, useRegion, useSelectedCustomer } from '../hooks'
@@ -11,6 +11,7 @@ export default function List() {
   const styles = stylesFn()
 
   const [ customersOfRegion, setCustomersOfRegion ] = useState([])
+  const [ loading, setLoading ] = useState(true)
   const { navigate } = useNavigation()
   const { selectedRegion } = useRegion()
   const { setSelectedCustomer } = useSelectedCustomer()
@@ -19,11 +20,16 @@ export default function List() {
   useEffect(() => {
     const regionCustomers = customers.filter(customer => customer.region === selectedRegion)
     setCustomersOfRegion(regionCustomers)
+    setLoading(false)
   }, [ customers ])
 
   const onPress = (value) => {
     setSelectedCustomer(value.id)
     navigate('Customer')
+  }
+
+  if (loading) {
+    return <ActivityIndicator />
   }
 
   return (
