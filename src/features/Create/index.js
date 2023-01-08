@@ -1,4 +1,5 @@
 import { View, Text } from 'react-native'
+import { useEffect } from 'react'
 import { useUpdateFields, useNewCustomer } from '../hooks'
 import Form from '../components/Form'
 import stylesFn from './styles'
@@ -7,7 +8,7 @@ export default function Create() {
   const styles = stylesFn()
 
   const { fields, setFormField } = useUpdateFields()
-  const { onSubmit } = useNewCustomer()
+  const { onSubmit, resetForm } = useNewCustomer()
 
   const {
     first_name,
@@ -15,6 +16,10 @@ export default function Create() {
     region,
     contact
   } = fields
+
+  useEffect(() => {
+    resetForm()
+  }, [])
 
   return (
     <View style={styles.create}>

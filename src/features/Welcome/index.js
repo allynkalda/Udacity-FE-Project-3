@@ -21,7 +21,6 @@ export default function Welcome() {
   }, [dispatch])
 
   const showToast = () => {
-    console.log('HERE')
     Toast.show({
       type: 'success',
       text1: 'Successfully deleted database!',

@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import { useUpdateFields, useEditCustomer } from '../hooks'
 import Form from '../components/Form'
 import stylesFn from './styles'

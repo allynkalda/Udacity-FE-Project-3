@@ -53,6 +53,7 @@ const reducers = {
         if (customer) {
             state.form.fields = customer
         } else {
+            state.form.fields = initialState.form.fields
             state.error.message = `could not find customer with id: ${payload}`
         }
     },
@@ -87,7 +88,12 @@ const reducers = {
     },
     setSelectedCustomer: (state, { payload }) => {
         state.selectedCustomer = payload
-        state.form.fields = payload
+        if (payload) {
+            state.form.fields = payload
+        } else {
+            state.form.fields = initialState.form.fields
+        }
+        
     },
     loadCustomers: (state) => {
         state.status = REQUESTING
@@ -120,7 +126,8 @@ export const {
     setSelectedCustomer,
     loadCustomers,
     loadCustomersResult,
-    deleteCustomersData
+    deleteCustomersData,
+    resetForm
 } = slice.actions
 
 export default slice.reducer
