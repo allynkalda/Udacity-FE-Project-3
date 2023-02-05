@@ -12,7 +12,7 @@ export function* takeLoadCustomers() {
 
         yield delay(1500)
 
-        yield put(actions.loadCustomersResult(customers))
+        yield put(actions.loadCustomersResult(customers === null? [] : customers))
     } catch (error) {
         yield put(actions.loadCustomersResult([]))
     }

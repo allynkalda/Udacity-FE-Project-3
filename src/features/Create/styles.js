@@ -10,7 +10,7 @@ const stylesFn = () => StyleSheet.create({
   createText: {
     fontSize: 16,
     padding: 12,
-    fontWeight: 500
+    // fontWeight: 500
   }
 });
 

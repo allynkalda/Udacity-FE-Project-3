@@ -1,4 +1,5 @@
-import { View, Text, TextInput, Picker, TouchableOpacity } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity } from 'react-native'
+import { Picker } from '@react-native-picker/picker'
 import { REGIONS } from '../../constants/regions'
 import stylesFn from './styles'
 

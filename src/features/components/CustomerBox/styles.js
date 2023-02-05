@@ -8,7 +8,7 @@ const stylesFn = () => StyleSheet.create({
     borderRadius: 4
   },
   text: {
-    fontWeight: 500
+    // fontWeight: 500
   }
 });
 

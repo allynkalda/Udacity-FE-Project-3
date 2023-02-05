@@ -17,7 +17,7 @@ export default function Regions() {
 
   useEffect(() => {
     const regionsCustomers = {}
-    REGIONS.map((region) => regionsCustomers[region] = customers.filter(customer => customer.region === region))
+    REGIONS.map((region) => regionsCustomers[region] = customers?.filter(customer => customer.region === region))
     setCustomersByRegion(regionsCustomers)
   }, [ customers ])
 

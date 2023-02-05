@@ -8,6 +8,7 @@ import { useDeleteCustomersData } from '../hooks'
 import * as actions from '../reducers'
 
 import stylesFn from './styles'
+import { askNotification } from '../../utilities/notification';
 
 export default function Welcome() {
   const styles = stylesFn()

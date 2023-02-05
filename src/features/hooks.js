@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { onNotificationSubmit } from '../utilities/notification'
 import * as actions from './reducers'
 
 export const useUpdateFields = () => {
@@ -25,6 +26,7 @@ export const useNewCustomer = () => {
       onSubmit: () => {
         console.log('Dispatching CREATE_CUSTOMER action')
         dispatch(actions.createCustomer())
+        onNotificationSubmit()
       }
   }
 }

@@ -3,6 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 export const set = async (key, value) => {
   console.log('SAVING TO ASYNC STORAGE ::: ', key, value)
   const serialized = JSON.stringify(value)
+  console.log('serialized', serialized)
   return await AsyncStorage.setItem(key, serialized)
 }
 

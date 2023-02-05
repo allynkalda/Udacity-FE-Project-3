@@ -17,7 +17,7 @@ const stylesFn = () => StyleSheet.create({
   buttonText: {
     color: '#fff',
     textAlign: 'center',
-    fontWeight: 500
+    // fontWeight: 500
   }
 });
 

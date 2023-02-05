@@ -18,7 +18,7 @@ export default function List() {
   const customers = useListCustomers()
 
   useEffect(() => {
-    const regionCustomers = customers.filter(customer => customer.region === selectedRegion)
+    const regionCustomers = customers?.filter(customer => customer.region === selectedRegion)
     setCustomersOfRegion(regionCustomers)
     setLoading(false)
   }, [ customers ])

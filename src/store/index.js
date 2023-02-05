@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 import reducer from './reducers'
 import rootSaga from './sagas'
 import createSagaMiddleware from 'redux-saga'
@@ -8,8 +8,8 @@ const initializeStore = (preloadedState = {}) => {
 
   const store = configureStore({
     reducer,
-    preloadedState,
-    middleware: [...getDefaultMiddleware(), sagaMiddleware],
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware),
+    preloadedState
   })
 
   sagaMiddleware.run(rootSaga)

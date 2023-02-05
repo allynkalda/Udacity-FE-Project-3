@@ -6,7 +6,7 @@ const stylesFn = () => StyleSheet.create({
     padding: 20,
   },
   textTitle: {
-    fontWeight: 500,
+    // fontWeight: 500,
     fontSize: 18,
     textAlign: 'center',
     padding: 16
@@ -26,7 +26,7 @@ const stylesFn = () => StyleSheet.create({
   buttonText: {
     color: '#fff',
     textAlign: 'center',
-    fontWeight: 500
+    // fontWeight: 500
   },
   dataBox: {
     margin: 24
