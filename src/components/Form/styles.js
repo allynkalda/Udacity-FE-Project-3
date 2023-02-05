@@ -13,18 +13,6 @@ const stylesFn = () => StyleSheet.create({
     margin: 10,
     backgroundColor: '#e4b7e5',
     color: '#63458A'
-  },
-  button: {
-    backgroundColor: '#63458A',
-    padding: 16,
-    margin: 10,
-    borderRadius: 5,
-    minWidth: 200
-  },
-  buttonText: {
-    color: '#fff',
-    textAlign: 'center',
-    // fontWeight: 500
   }
 });
 

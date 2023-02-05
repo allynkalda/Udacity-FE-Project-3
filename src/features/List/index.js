@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
-import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native'
+import { View, Text, ActivityIndicator } from 'react-native'
 
-import CustomerBox from '../components/CustomerBox'
+import CustomerBox from '../../components/CustomerBox'
 import { useListCustomers, useRegion, useSelectedCustomer } from '../hooks'
 import { useNavigation } from '@react-navigation/native'
 
 import stylesFn from './styles'
+import Button from '../../components/Button'
 
 export default function List() {
   const styles = stylesFn()
@@ -39,12 +40,7 @@ export default function List() {
       return <CustomerBox key={index} onPress={() => onPress(customer)} firstName={customer.first_name} lastName={customer.last_name} />
       }) : <Text style={styles.noCustomerText}>No Customers!</Text>}
 
-    <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigate('Create')}
-      >
-        <Text style={styles.buttonText}>Create New Customer</Text>
-    </TouchableOpacity>
+    <Button onPress={() => navigate('Create')} text="Create New Customer" />
     </View>
   )
 }

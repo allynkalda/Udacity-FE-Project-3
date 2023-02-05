@@ -15,18 +15,6 @@ const stylesFn = () => StyleSheet.create({
     paddingLeft: 30,
     paddingTop: 10,
     fontSize: 16,
-  }, 
-  button: {
-    backgroundColor: '#63458A',
-    padding: 16,
-    margin: 10,
-    borderRadius: 5,
-    minWidth: 200
-  },
-  buttonText: {
-    color: '#fff',
-    textAlign: 'center',
-    // fontWeight: 500
   },
   dataBox: {
     margin: 24

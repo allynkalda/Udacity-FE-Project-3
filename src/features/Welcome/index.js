@@ -9,6 +9,7 @@ import * as actions from '../reducers'
 
 import stylesFn from './styles'
 import { askNotification } from '../../utilities/notification';
+import Button from '../../components/Button';
 
 export default function Welcome() {
   const styles = stylesFn()
@@ -36,26 +37,9 @@ export default function Welcome() {
   
   return (
     <View style={styles.welcome}>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigate('Create')}
-      >
-        <Text style={styles.buttonText}>Create New Customer</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigate('Regions')}
-      >
-        <Text style={styles.buttonText}>Go to Regions</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styles.button}
-        onPress={onPress}
-      >
-        <Text style={styles.buttonText}>Delete database</Text>
-      </TouchableOpacity>
+      <Button onPress={() => navigate('Create')} text="Create New Customer" />
+      <Button onPress={() => navigate('Regions')} text="Go to Regions" />
+      <Button onPress={onPress} text="Delete database" />
     </View>
   )
 }

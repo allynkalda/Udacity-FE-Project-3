@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { useListCustomers, useRegion } from '../hooks'
 import { REGIONS } from '../constants/regions'
 
 import stylesFn from './styles'
+import Button from '../../components/Button'
 
 export default function Regions() {
   const styles = stylesFn()
@@ -29,13 +30,7 @@ export default function Regions() {
   return (
     <View style={styles.region}>
       {REGIONS.map((region, index) => {
-      return <TouchableOpacity
-      key={index}
-      style={styles.button}
-      onPress={() => press(region)}
-    >
-      <Text style={styles.buttonText}>{region}</Text>
-    </TouchableOpacity>
+      return <Button onPress={() => press(region)} text={region} />
       })}
     </View>
   )

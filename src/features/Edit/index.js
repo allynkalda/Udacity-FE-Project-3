@@ -1,6 +1,6 @@
 import { View } from 'react-native'
 import { useUpdateFields, useEditCustomer } from '../hooks'
-import Form from '../components/Form'
+import Form from '../../components/Form'
 import stylesFn from './styles'
 
 export default function Edit() {

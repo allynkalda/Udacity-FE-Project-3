@@ -1,7 +1,8 @@
-import { View, Text, TextInput, TouchableOpacity } from 'react-native'
+import { View, TextInput } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
-import { REGIONS } from '../../constants/regions'
+import { REGIONS } from '../../features/constants/regions'
 import stylesFn from './styles'
+import Button from '../Button'
 
 export default function Form({
   firstName,
@@ -45,12 +46,7 @@ export default function Form({
         style={styles.textInput}
         onChangeText={v => setFormField('contact', v)}
       />
-      <TouchableOpacity
-        onPress={onSubmit}
-        style={styles.button}
-      >
-        <Text style={styles.buttonText}>Submit</Text>
-      </TouchableOpacity>
+      <Button onPress={onSubmit} text="Submit" />
     </View>
   )
 }

@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text } from 'react-native'
 import { useSelectedCustomer, useListCustomers, useEditCustomer } from '../hooks'
 import { useNavigation } from '@react-navigation/native'
 
 import stylesFn from './styles'
+import Button from '../../components/Button'
 
 export default function Customer() {
   const styles = stylesFn()
@@ -35,12 +36,7 @@ export default function Customer() {
     <Text style={styles.text}>Region: {customerData.region}</Text>
     <Text style={styles.text}>Contact: {customerData.contact}</Text>
     </View>
-    <TouchableOpacity
-        onPress={onPress}
-        style={styles.button}
-      >
-        <Text style={styles.buttonText}>Edit</Text>
-      </TouchableOpacity>
+    <Button onPress={onPress} text="Edit" />
     </View>
   )
 }

@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import { useEffect } from 'react'
 import { useUpdateFields, useNewCustomer } from '../hooks'
-import Form from '../components/Form'
+import Form from '../../components/Form'
 import stylesFn from './styles'
 
 export default function Create() {
