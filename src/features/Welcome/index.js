@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
@@ -8,7 +8,6 @@ import { useDeleteCustomersData } from '../hooks'
 import * as actions from '../reducers'
 
 import stylesFn from './styles'
-import { askNotification } from '../../utilities/notification';
 import Button from '../../components/Button';
 
 export default function Welcome() {
