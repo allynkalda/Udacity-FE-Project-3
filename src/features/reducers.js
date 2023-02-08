@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { PENDING, INPROGRESS, REQUESTING, SUCCESS, ERROR } from '../utilities/helpers'
+import { PENDING, REQUESTING, SUCCESS, ERROR } from '../utilities/helpers'
 
 const name = 'customer'
 
